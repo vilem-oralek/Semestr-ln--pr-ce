@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body id = "headerBody">
+        <header class="navbar">
+            <div class="logo">
+              <a href="index.html">Název</a>
+            </div>
         
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        
+            <nav class="nav-menu" id="navMenu">
+              <ul>
+                <li><a href="">Galerie</a></li>
+                <li><a href="">Rezervace</a></li>
+                <li><a href="">Kontakt</a></li>
+              </ul>
+            </nav>
+        
+            <div class="user-controls">
+              <div class="user-dropdown">
+                <div class="username">Profil</div>
+                <div class="dropdown-content">
+                  <a href="#">Profil</a>
+                  <a href="#">Přihlásit se</a>
+                  <a href="#">Registrovat</a>
+                </div>
+              </div>
+              <div class="user-photo-dropdown">
+                <img src="https://via.placeholder.com/20" alt="Profilová fotka" class="user-photo" onclick="toggleDropdown()">
+                <div class="dropdown-content">
+                  <a href="#">Profil</a>
+                  <a href="#">Přihlásit se</a>
+                  <a href="#">Registrovat</a>
+                </div>
+              </div>
+            </div>
+          </header>
+  
+          <script>
+            function toggleMenu() {
+              document.getElementById("navMenu").classList.toggle("active");
+            }
+            function toggleDropdown() {
+              const dropdowns = document.querySelectorAll('.dropdown-content');
+              dropdowns.forEach(menu => menu.classList.toggle('active'));
+            }
+          </script>
     </body>
 </html>
