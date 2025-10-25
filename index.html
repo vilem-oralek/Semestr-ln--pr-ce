@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modrý Jelen - Inspirace</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-image"></div>
     <div id="header-placeholder"></div>
+
+    <main>
+
+        <section class="hero">
+            <h1>Vítejte u Vilémova strejdy</h1>
+            <p>Zažijte nezapomenutelný pobyt v srdci přírody.</p>
+            <a href="#about" class="btn-primary">Zjistit více</a>
+        </section>
+
+    
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>O nás</h2>
+                <p>Vilémův strejda je místo, kde se příroda setkává s pohodlím. Nabízíme ubytování, skvělé jídlo a aktivity pro celou rodinu.</p>
+            </div>
+            <div class="about-image">
+                <img src="about_image.jpg" alt="O nás">
+            </div>
+        </section>
+
+     
+        <section class="gallery">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <img src="gallery1.jpg" alt="Galerie 1">
+                <img src="gallery2.jpg" alt="Galerie 2">
+                <img src="gallery3.jpg" alt="Galerie 3">
+                <img src="gallery4.jpg" alt="Galerie 4">
+            </div>
+        </section>
+
+     
+        <section class="contact">
+            <h2>Kontakt</h2>
+            <p>Máte otázky? Kontaktujte nás na <a href="mailto:info@mvilémuv strejda.cz">info@vilémuvstrejda.cz</a> nebo volejte na <a href="tel:+420123456789">+420 123 456 789</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 vilemuv strejda. Všechna práva vyhrazena.</p>
+    </footer>
 
     <script>
       fetch("header.html")

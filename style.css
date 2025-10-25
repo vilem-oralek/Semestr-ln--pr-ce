@@ -14,12 +14,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(210deg, rgba(197, 187, 184, 1.000) 0.000%, rgba(197, 187, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 93.333%, rgba(91, 75, 116, 1.000) 93.333% 100.000%);
+   /* background-image: linear-gradient(210deg, rgba(197, 187, 184, 1.000) 0.000%, rgba(197, 187, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 93.333%, rgba(91, 75, 116, 1.000) 93.333% 100.000%); */
+    background-color: rgba(211, 211, 211, 0.809);
     padding: 20px 40px;
     margin: 15px 20px;
     border-radius: 10px;
     border: 2px solid white;
-
     box-shadow: 0px 2px 5px gray;
     position: relative;
   }
@@ -27,12 +27,12 @@
   /* Logo vlevo */
   .logo a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 24px;
     font-weight: bold;
   }
   
-  /* Navigační menu uprostřed */
+
   .nav-menu {
     position: absolute;
     left: 50%;
@@ -56,7 +56,7 @@
   
   .nav-menu a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 18px;
     text-align: center;
     padding: 8px 16px;
@@ -67,7 +67,7 @@
   .nav-menu a:hover {
     color: white;
     transform: scale(1.1);
-    background-color: rgb(56, 95, 125);
+    background-color: #000;
     text-decoration: none;
   }
   
@@ -84,20 +84,18 @@
   
   .username {
     font-size: 20px;
-    color: white;
-    font-weight: bold;
+    color: black;
   }
 
   .username:hover {
     color: white;
-    background-color: rgb(56, 95, 125);
+    background-color: #000;
     border-radius: 5px;
     padding: 2px 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  
-  /* Dropdown menu pro uživatele */
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -166,3 +164,141 @@
         display: flex;
     }
   }
+
+/* ********************************************************************************************* */
+/* ********************************** Index CSS ************************************************ */
+/* ********************************************************************************************* */
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 86vh; 
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.hero .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.gallery {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.contact {
+  padding: 50px 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.contact a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
