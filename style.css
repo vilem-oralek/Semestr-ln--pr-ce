@@ -310,13 +310,13 @@ footer {
   position: relative;
   top: 0;
   left: 0;
+  margin: 0;
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 0px;
   border: none;
-  margin: 0;
   box-shadow: none;
   z-index: 10;
-  padding: 20px 50px;
+  padding: 32px 43px;
 }
 #index-nav a{
   color: white;
@@ -450,11 +450,10 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 0.95rem;
-  margin-top: 60px;
   border-top: 4px solid #cdd9e5;
   position: fixed;
   bottom: 0;
-  padding: 2px;
+  padding: 0.4vh;
 }
 
 /* RESPONSIVITA */
