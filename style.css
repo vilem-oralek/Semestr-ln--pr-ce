@@ -5,6 +5,15 @@
 /* ********************************************************************************************* */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
 #headerBody {
     font-family: 'Lato', sans-serif , Arial , Helvetica;
     margin: 0;
@@ -15,9 +24,7 @@
     justify-content: space-between;
     align-items: center;
    /* background-image: linear-gradient(210deg, rgba(197, 187, 184, 1.000) 0.000%, rgba(197, 187, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 6.667%, rgba(184, 181, 184, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 13.333%, rgba(169, 175, 183, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 20.000%, rgba(154, 168, 181, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 26.667%, rgba(139, 161, 179, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 33.333%, rgba(125, 152, 175, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 40.000%, rgba(112, 144, 171, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 46.667%, rgba(101, 135, 166, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 53.333%, rgba(92, 126, 161, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 60.000%, rgba(85, 117, 155, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 66.667%, rgba(81, 108, 148, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 73.333%, rgba(79, 99, 141, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 80.000%, rgba(80, 90, 133, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 86.667%, rgba(84, 83, 125, 1.000) 93.333%, rgba(91, 75, 116, 1.000) 93.333% 100.000%); */
-    background-color: rgba(211, 211, 211, 0.809);
-    padding: 20px 40px;
-    margin: 15px 20px;
+    background-color: rgba(211, 211, 211, 0.7);
     border-radius: 10px;
     border: 2px solid white;
     box-shadow: 0px 2px 5px gray;
@@ -84,7 +91,7 @@
   
   .username {
     font-size: 20px;
-    color: black;
+    color: white;
   }
 
   .username:hover {
@@ -101,7 +108,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    background-color: black;
     border: 1px solid lightgray;
     box-shadow: 0px 2px 5px gray;
     min-width: 140px;
@@ -111,12 +118,12 @@
   .dropdown-content a {
     display: block;
     padding: 8px 10px;
-    color: black;
+    color: lightgrey;
     text-decoration: none;
   }
   
   .dropdown-content a:hover {
-    background-color: rgb(220, 240, 255);
+    background-color: black;
   }
   
   .user-dropdown:hover .dropdown-content {
@@ -187,9 +194,11 @@
   align-items: center;
   text-align: center;
   color: white;
-  height: 86vh; 
+  height: 90vh; 
   background: rgba(0, 0, 0, 0.5); 
+  padding-top: 10px;
   padding: 20px;
+  position: relative;
 }
 
 .hero h1 {
@@ -228,7 +237,7 @@
   flex: 1;
   padding: 20px;
 }
-
+ 
 .about-content h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -301,4 +310,20 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
+}
+#index-nav{
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 0px;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  padding: none;
+  z-index: 10;
+  padding: 20px 50px;
+}
+#index-nav a{
+  color: white;
 }

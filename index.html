@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="navbar" id="index-nav">
+        <div class="logo">
+          <a href="index.html">Chata</a>
+        </div>
+    
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="">Galerie</a></li>
+            <li><a href="">Rezervace</a></li>
+            <li><a href="">Kontakt</a></li>
+          </ul>
+        </nav>
+    
+        <div class="user-controls">
+          <div class="user-dropdown">
+            <div class="username">Profil</div>
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+          <div class="user-photo-dropdown">
+            <img src="https://via.placeholder.com/20" alt="Profilová fotka" class="user-photo" onclick="toggleDropdown()">
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+        </div>
+      </header>
     <div class="background-image"></div>
     <div id="header-placeholder"></div>
 
@@ -50,14 +84,5 @@
     <footer>
         <p>&copy; 2023 vilemuv strejda. Všechna práva vyhrazena.</p>
     </footer>
-
-    <script>
-      fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("header-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Chyba při načítání headeru:", error));
-    </script>
 </body>
 </html>
