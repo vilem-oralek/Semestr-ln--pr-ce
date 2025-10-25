@@ -5,7 +5,7 @@
 /* ********************************************************************************************* */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-#headerBody {
+Body {
     font-family: 'Lato', sans-serif , Arial , Helvetica;
     margin: 0;
     padding: 0;
@@ -301,4 +301,138 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
+}
+
+/* ********************************************************************************************* */
+/* ********************************** KONTAKTY – STYL PODLE MODRÉHO JELENA ********************* */
+/* ********************************************************************************************* */
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:url(background_kontakty.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+#kontakty-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  
+}
+
+
+/* Dvojsloupcový layout pro desktop */
+#kontakty-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+/* Levá sekce – mapa */
+#kontakty-mapa {
+  flex: 1 1 550px;
+  min-width: 320px;
+}
+
+#kontakty-mapa h2 {
+  font-size: 1.8rem;
+  color: #004b87;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#kontakty-map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#kontakty-map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Pravá sekce – adresa */
+#kontakty-adresa {
+  flex: 0 1 400px;
+  min-width: 300px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+#kontakty-adresa h2 {
+  font-size: 1.8rem;
+  color: #004b87;
+  border-bottom: 2px solid #004b87;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#kontakty-adresa p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 8px 0;
+  color: #444;
+}
+
+#kontakty-adresa a {
+  color: #004b87;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#kontakty-adresa a:hover {
+  text-decoration: underline;
+}
+
+#kontakty-footer {
+  width: 100%;
+  height: auto;
+  background-color: rgba(211, 211, 211, 0.809);
+  color: black;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 60px;
+  border-top: 4px solid #cdd9e5;
+  position: absolute;
+  bottom: 0;
+}
+
+/* RESPONSIVITA */
+@media (max-width: 900px) {
+  #kontakty-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #kontakty-mapa, #kontakty-adresa {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  #kontakty-adresa {
+    text-align: center;
+  }
 }
