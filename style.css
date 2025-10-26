@@ -133,7 +133,7 @@ html, body{
     display: block;
   }
   
-  /* Ikona menu (mobilní) */
+
   .menu-toggle {
     display: none;
     font-size: 28px;
@@ -141,7 +141,7 @@ html, body{
     color: navy;
   }
   
-  /* RESPONSIVITA */
+
   @media (max-width: 700px) {
     .nav-menu {
         display: none;
@@ -168,8 +168,7 @@ html, body{
     .menu-toggle {
         display: block;
     }
-  
-    /* Aktivace menu po kliknutí */
+
     .nav-menu.active {
         display: flex;
     }
@@ -334,7 +333,7 @@ footer {
   color: white;
 }
 /* ********************************************************************************************* */
-/* ********************************** KONTAKTY – STYL PODLE MODRÉHO JELENA ********************* */
+/* ********************************** KONTAKTY ********************* */
 /* ********************************************************************************************* */
 
 .background-image-kontakty {
@@ -368,7 +367,7 @@ footer {
 }
 
 
-/* Dvojsloupcový layout pro desktop */
+
 #kontakty-content {
   position: absolute;
   top: 50%;
@@ -386,7 +385,6 @@ footer {
   text-align: center;
 }
 
-/* Levá sekce – mapa */
 #kontakty-mapa {
   flex: 1 1 550px;
 }
@@ -413,7 +411,6 @@ footer {
   border: none;
 }
 
-/* Pravá sekce – adresa */
 #kontakty-adresa {
   flex: 0 1 400px;
   min-width: 300px;
@@ -450,7 +447,7 @@ footer {
 
 #kontakty-footer {
   width: 100%;
-  height: 2vh;
+  height: 5vh;
   background-color: rgba(211, 211, 211, 0.809);
   color: black;
   display: flex;
@@ -479,5 +476,136 @@ footer {
 
   #kontakty-adresa {
     text-align: center;
+  }
+}
+
+/* ********************************************************************************************* */
+/* ********************************** REZERVACE ********************* */
+/* ********************************************************************************************* */
+
+#rezervace {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 100vh; 
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  position: relative;
+}
+#rezervace {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  position: relative; 
+  z-index: 2; 
+}
+
+.popis {
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+#rezervace h2 {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+#rezervacni-formular {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #004b87;
+  box-shadow: 0 0 4px rgba(0, 75, 135, 0.5);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #004b87;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#footer-rezervace {
+  width: 100%;
+  height: 5vh;
+  background-color: rgba(211, 211, 211, 0.809);
+  color: black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-top: 60px;
+  border-top: 4px solid #cdd9e5;
+  position: relative;;
+  bottom: 0;
+  padding: 0.4vh;
+}
+
+
+button[type="submit"]:hover {
+  background-color: #00325e;
+}
+
+/* Responsivita */
+@media (max-width: 600px) {
+  #rezervace {
+    padding: 15px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
   }
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rezervace</title>
+</head>
+<body>
+    <header class="navbar" id="index-nav">
+        <div class="logo">
+          <a href="index.html">Chata</a>
+        </div>
+    
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="">Galerie</a></li>
+            <li><a href="">Rezervace</a></li>
+            <li><a href="kontakty.html">Kontakt</a></li>
+          </ul>
+        </nav>
+    
+        <div class="user-controls">
+          <div class="user-dropdown">
+            <div class="username">Profil</div>
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+          <div class="user-photo-dropdown">
+            <img src="profile-picture.jpg" alt="Profilová fotka" class="user-photo" onclick="toggleDropdown()">
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+
+    <div class="reservation-hero">
+
+    <section class="popis">
+        <h1>Rezervace</h1>
+        <p>Rezervujte si svůj pobyt včas a užijte si nezapomenutelný zážitek v našem krásném prostředí.</p>
+        <h2>Jak rezervovat?</h2>
+        <p>Vyberte si datum a čas, vyplňte své údaje a odešlete formulář. Po odeslání vás budeme kontaktovat s potvrzením vaší rezervace.</p>
+        <p>Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na e-mailu nebo telefonním čísle uvedeném níže.</p>
+    </section>
+
+    <section id="rezervace">
+        <h2>Rezervace</h2>
+        <form id="rezervacni-formular">
+            <div class="form-group">
+                <label for="datum">Vyberte datum:</label>
+                <input type="date" id="datum" name="datum" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cas">Vyberte čas:</label>
+                <input type="time" id="cas" name="cas" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jmeno">Vaše jméno:</label>
+                <input type="text" id="jmeno" name="jmeno" placeholder="Zadejte své jméno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Váš e-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Zadejte svůj e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefon">Telefonní číslo:</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="Zadejte svůj telefon" required>
+            </div>
+
+            <div class="form-group">
+                <label for="poznamka">Poznámka (volitelné):</label>
+                <textarea id="poznamka" name="poznamka" placeholder="Zde můžete napsat poznámku..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Odeslat rezervaci</button>
+            </div>
+        </form>
+    </section>
+</div>
+    <div class="background-image"></div>
+    <footer id = footer-rezervace>
+        <p>&copy; 2023 Modrý Jelen Lipno. Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>
