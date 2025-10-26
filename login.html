@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Přihlášení</title>
+</head>
+<body>
+  
+    <header class="navbar" id="index-nav">
+        <div class="logo">
+          <a href="index.html">Chata</a>
+        </div>
+    
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="">Galerie</a></li>
+            <li><a href="">Rezervace</a></li>
+            <li><a href="kontakty.html">Kontakt</a></li>
+          </ul>
+        </nav>
+    
+        <div class="user-controls">
+          <div class="user-dropdown">
+            <div class="username">Profil</div>
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+          <div class="user-photo-dropdown">
+            <img src="profile-picture.jpg" alt="Profilová fotka" class="user-photo" onclick="toggleDropdown()">
+            <div class="dropdown-content">
+              <a href="#">Profil</a>
+              <a href="#">Přihlásit se</a>
+              <a href="#">Registrovat</a>
+            </div>
+          </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="background-image"></div>
+  <main id="login-container">
+    <section class="login-form-wrapper">
+      <h1 class="login-title">Přihlášení</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="Zadejte svůj e-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Heslo</label>
+          <input type="password" id="password" name="password" class="form-input" placeholder="Zadejte své heslo" required>
+        </div>
+        <button type="submit" class="login-button">Přihlásit se</button>
+      </form>
+    </section>
+</section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Modrý Jelen Lipno. Všechna práva vyhrazena.</p>
+</footer>
+</body>
+</html>
