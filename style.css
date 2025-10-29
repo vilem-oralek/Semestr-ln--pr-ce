@@ -10,7 +10,17 @@ html, body{
     box-sizing: border-box;
     overflow-x: hidden;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
   }
+
+  footer {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+  }
+
   .navbar {
     position: relative;
     display: flex;
@@ -133,7 +143,7 @@ html, body{
     display: block;
   }
   
-  /* Ikona menu (mobilní) */
+
   .menu-toggle {
     display: none;
     font-size: 28px;
@@ -141,7 +151,7 @@ html, body{
     color: navy;
   }
   
-  /* RESPONSIVITA */
+
   @media (max-width: 700px) {
     .nav-menu {
         display: none;
@@ -168,8 +178,7 @@ html, body{
     .menu-toggle {
         display: block;
     }
-  
-    /* Aktivace menu po kliknutí */
+
     .nav-menu.active {
         display: flex;
     }
@@ -178,6 +187,16 @@ html, body{
 /* ********************************************************************************************* */
 /* ********************************** Index CSS ************************************************ */
 /* ********************************************************************************************* */
+.index-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url('background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 
 .background-image {
   position: fixed;
@@ -185,9 +204,17 @@ html, body{
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('background-image.jpg') no-repeat center center fixed;
-  background-size: cover;
   z-index: -1;
+
+/*   background: linear-gradient(90deg, rgba(164, 116, 81, 1.000) 0.000%, rgba(156, 152, 129, 1.000) 16.667%, rgba(115, 160, 157, 1.000) 33.333%, rgba(59, 137, 154, 1.000) 50.000%, rgba(9, 91, 121, 1.000) 66.667%, rgba(0, 40, 71, 1.000) 83.333%, rgba(0, 1, 22, 1.000) 100.000%)
+ */
+  background: conic-gradient(from 210deg, rgba(197, 187, 184, 1.000) 0.000deg, rgba(197, 187, 184, 1.000) 24.000deg, rgba(184, 181, 184, 1.000) 24.000deg, rgba(184, 181, 184, 1.000) 48.000deg, rgba(169, 175, 183, 1.000) 48.000deg, rgba(169, 175, 183, 1.000) 72.000deg, rgba(154, 168, 181, 1.000) 72.000deg, rgba(154, 168, 181, 1.000) 96.000deg, rgba(139, 161, 179, 1.000) 96.000deg, rgba(139, 161, 179, 1.000) 120.000deg, rgba(125, 152, 175, 1.000) 120.000deg, rgba(125, 152, 175, 1.000) 144.000deg, rgba(112, 144, 171, 1.000) 144.000deg, rgba(112, 144, 171, 1.000) 168.000deg, rgba(101, 135, 166, 1.000) 168.000deg, rgba(101, 135, 166, 1.000) 192.000deg, rgba(92, 126, 161, 1.000) 192.000deg, rgba(92, 126, 161, 1.000) 216.000deg, rgba(85, 117, 155, 1.000) 216.000deg, rgba(85, 117, 155, 1.000) 240.000deg, rgba(81, 108, 148, 1.000) 240.000deg, rgba(81, 108, 148, 1.000) 264.000deg, rgba(79, 99, 141, 1.000) 264.000deg, rgba(79, 99, 141, 1.000) 288.000deg, rgba(80, 90, 133, 1.000) 288.000deg, rgba(80, 90, 133, 1.000) 312.000deg, rgba(84, 83, 125, 1.000) 312.000deg, rgba(84, 83, 125, 1.000) 336.000deg, rgba(91, 75, 116, 1.000) 336.000deg 360.000deg)
+
+/* background: linear-gradient(90deg, rgba(255, 255, 255, 1.000) 0.000%, rgba(255, 255, 255, 1.000) 25.000%, rgba(255, 251, 201, 1.000) 50.000%, rgba(248, 198, 220, 1.000) 75.000%, rgba(188, 162, 255, 1.000) 100.000%)
+ */
+
+/* background: conic-gradient(from 90deg, rgba(198, 227, 190, 1.000) 0.000deg, rgba(198, 227, 190, 1.000) 10.588deg, rgba(195, 228, 193, 1.000) 10.588deg, rgba(195, 228, 193, 1.000) 21.176deg, rgba(192, 228, 196, 1.000) 21.176deg, rgba(192, 228, 196, 1.000) 31.765deg, rgba(189, 227, 199, 1.000) 31.765deg, rgba(189, 227, 199, 1.000) 42.353deg, rgba(185, 227, 201, 1.000) 42.353deg, rgba(185, 227, 201, 1.000) 52.941deg, rgba(182, 226, 203, 1.000) 52.941deg, rgba(182, 226, 203, 1.000) 63.529deg, rgba(178, 225, 205, 1.000) 63.529deg, rgba(178, 225, 205, 1.000) 74.118deg, rgba(174, 224, 207, 1.000) 74.118deg, rgba(174, 224, 207, 1.000) 84.706deg, rgba(169, 223, 208, 1.000) 84.706deg, rgba(169, 223, 208, 1.000) 95.294deg, rgba(165, 221, 209, 1.000) 95.294deg, rgba(165, 221, 209, 1.000) 105.882deg, rgba(160, 219, 210, 1.000) 105.882deg, rgba(160, 219, 210, 1.000) 116.471deg, rgba(155, 217, 210, 1.000) 116.471deg, rgba(155, 217, 210, 1.000) 127.059deg, rgba(150, 215, 210, 1.000) 127.059deg, rgba(150, 215, 210, 1.000) 137.647deg, rgba(145, 212, 210, 1.000) 137.647deg, rgba(145, 212, 210, 1.000) 148.235deg, rgba(140, 209, 210, 1.000) 148.235deg, rgba(140, 209, 210, 1.000) 158.824deg, rgba(135, 206, 209, 1.000) 158.824deg, rgba(135, 206, 209, 1.000) 169.412deg, rgba(130, 203, 208, 1.000) 169.412deg, rgba(130, 203, 208, 1.000) 180.000deg, rgba(124, 200, 206, 1.000) 180.000deg, rgba(124, 200, 206, 1.000) 190.588deg, rgba(119, 196, 205, 1.000) 190.588deg, rgba(119, 196, 205, 1.000) 201.176deg, rgba(113, 192, 203, 1.000) 201.176deg, rgba(113, 192, 203, 1.000) 211.765deg, rgba(108, 188, 201, 1.000) 211.765deg, rgba(108, 188, 201, 1.000) 222.353deg, rgba(102, 184, 198, 1.000) 222.353deg, rgba(102, 184, 198, 1.000) 232.941deg, rgba(97, 180, 196, 1.000) 232.941deg, rgba(97, 180, 196, 1.000) 243.529deg, rgba(91, 175, 193, 1.000) 243.529deg, rgba(91, 175, 193, 1.000) 254.118deg, rgba(86, 171, 189, 1.000) 254.118deg, rgba(86, 171, 189, 1.000) 264.706deg, rgba(80, 166, 186, 1.000) 264.706deg, rgba(80, 166, 186, 1.000) 275.294deg, rgba(75, 161, 182, 1.000) 275.294deg, rgba(75, 161, 182, 1.000) 285.882deg, rgba(70, 156, 178, 1.000) 285.882deg, rgba(70, 156, 178, 1.000) 296.471deg, rgba(65, 151, 174, 1.000) 296.471deg, rgba(65, 151, 174, 1.000) 307.059deg, rgba(60, 146, 170, 1.000) 307.059deg, rgba(60, 146, 170, 1.000) 317.647deg, rgba(55, 140, 166, 1.000) 317.647deg, rgba(55, 140, 166, 1.000) 328.235deg, rgba(50, 135, 161, 1.000) 328.235deg, rgba(50, 135, 161, 1.000) 338.824deg, rgba(45, 129, 156, 1.000) 338.824deg, rgba(45, 129, 156, 1.000) 349.412deg, rgba(40, 124, 151, 1.000) 349.412deg 360.000deg)
+ */
 }
 
 .hero {
@@ -198,7 +225,7 @@ html, body{
   text-align: center;
   color: white;
   height: 90vh; 
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.3); 
   padding-top: 10px;
   padding: 20px;
   position: relative;
@@ -308,18 +335,13 @@ html, body{
   text-decoration: underline;
 }
 
-footer {
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-}
+
 #index-nav{
   position: relative;
   top: 0;
   left: 0;
   margin: 0;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.3); 
   border-radius: 0px;
   border: none;
   box-shadow: none;
@@ -334,19 +356,20 @@ footer {
   color: white;
 }
 /* ********************************************************************************************* */
-/* ********************************** KONTAKTY – STYL PODLE MODRÉHO JELENA ********************* */
+/* ********************************** KONTAKTY ********************* */
 /* ********************************************************************************************* */
 
-.background-image-kontakty {
+/* .background-image-kontakty {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background:url(background_kontakty.jpg) no-repeat center center fixed;
+  background-color: #004b87;
   background-size: cover;
   z-index: -1;
-}
+} */
 #kontakty-body{
   margin: 0;
   padding: 0;
@@ -368,7 +391,7 @@ footer {
 }
 
 
-/* Dvojsloupcový layout pro desktop */
+
 #kontakty-content {
   position: absolute;
   top: 50%;
@@ -386,7 +409,6 @@ footer {
   text-align: center;
 }
 
-/* Levá sekce – mapa */
 #kontakty-mapa {
   flex: 1 1 550px;
 }
@@ -413,7 +435,6 @@ footer {
   border: none;
 }
 
-/* Pravá sekce – adresa */
 #kontakty-adresa {
   flex: 0 1 400px;
   min-width: 300px;
@@ -448,22 +469,6 @@ footer {
   text-decoration: underline;
 }
 
-#kontakty-footer {
-  width: 100%;
-  height: 2vh;
-  background-color: rgba(211, 211, 211, 0.809);
-  color: black;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.95rem;
-  border-top: 4px solid #cdd9e5;
-  position: fixed;;
-  bottom: 0;
-  padding: 0.4vh;
-}
-
 /* RESPONSIVITA */
 @media (max-width: 900px) {
   #kontakty-content {
@@ -479,4 +484,284 @@ footer {
   #kontakty-adresa {
     text-align: center;
   }
+}
+
+/* ********************************************************************************************* */
+/* ********************************** REZERVACE ********************* */
+/* ********************************************************************************************* */
+
+#rezervace {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 110vh; 
+  background: rgba(0, 0, 0, 0.3); 
+  padding: 20px;
+  position: relative;
+}
+#rezervace {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  position: relative; 
+  z-index: 2; 
+}
+
+.popis {
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+#rezervace h2 {
+  text-align: center;
+  color: black;
+  margin-bottom: 10px ;
+  font-size: 2.5rem;
+}
+
+#rezervacni-formular {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #004b87;
+  box-shadow: 0 0 4px rgba(0, 75, 135, 0.5);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #004b87;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button[type="submit"]:hover {
+  background-color: #00325e;
+}
+
+/* Responsivita */
+@media (max-width: 600px) {
+  #rezervace {
+    padding: 15px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
+  }
+}
+/* ********************************************************************************************* */
+/* ********************************** Login page *********************************************** */
+/* ********************************************************************************************* */
+
+#login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  border-radius: 10px;
+  width: 80vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.login-form-wrapper {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-button:hover {
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .login-form-wrapper {
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .form-input {
+    padding: 8px;
+  }
+
+  .login-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+/* ********************************************************************************************* */
+/* ******************************** Registration page ****************************************** */
+/* ********************************************************************************************* */
+
+/* CSS for the registration form */
+.registration-form-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack the title and form vertically */
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 160px); /* Adjust height to leave space for header and footer */
+  margin: 80px 0; /* Add equal spacing from header and footer */
+}
+
+.registration-title {
+  font-size: 28px; /* Slightly larger font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+#registration-form {
+  background: #ffffff;
+  padding: 40px; /* Increased padding for better spacing */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Increased width */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-groupa {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-labela {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form-inputa {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-inputa:focus {
+  border-color: #004b87;
+  box-shadow: 0 0 4px rgba(0, 75, 135, 0.5);
+}
+
+.registration-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #004b87;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-button:hover {
+  background-color: #00325e;
 }

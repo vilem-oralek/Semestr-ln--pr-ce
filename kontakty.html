@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Kontakty</title>
+    <script>
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
 </head>
 <body id="kontakty-body">
+  <div id="header-placeholder"></div>
+  <section class="hero">
     <div id="header-placeholder"></div>
-    <div class = "background-image-kontakty"></div>
+    <div class="background-image"></div>
     <main id="kontakty-page">
         <div id="kontakty-content">
           <section id="kontakty-mapa">
@@ -33,17 +42,11 @@
             </div>
           </section>
         </div>
+      </section>
       </main>
-    <footer id="kontakty-footer">
+    <footer>
         <p>&copy; 2023 Modrý Jelen Lipno. Všechna práva vyhrazena.</p>
     </footer>
-    <script>
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-placeholder").innerHTML = data;
-            })
-            .catch(error => console.error("Chyba při načítání headeru:", error));
-    </script>
+   
 </body>
 </html>

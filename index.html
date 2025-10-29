@@ -3,86 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modrý Jelen - Inspirace</title>
+    <title>Vilémův strejda</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
 </head>
 <body>
-    <header class="navbar" id="index-nav">
-        <div class="logo">
-          <a href="index.html">Chata</a>
-        </div>
-    
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    
-        <nav class="nav-menu" id="navMenu">
-          <ul>
-            <li><a href="">Galerie</a></li>
-            <li><a href="">Rezervace</a></li>
-            <li><a href="kontakty.html">Kontakt</a></li>
-          </ul>
-        </nav>
-    
-        <div class="user-controls">
-          <div class="user-dropdown">
-            <div class="username">Profil</div>
-            <div class="dropdown-content">
-              <a href="#">Profil</a>
-              <a href="#">Přihlásit se</a>
-              <a href="#">Registrovat</a>
-            </div>
-          </div>
-          <div class="user-photo-dropdown">
-            <img src="profile-picture.jpg" alt="Profilová fotka" class="user-photo" onclick="toggleDropdown()">
-            <div class="dropdown-content">
-              <a href="#">Profil</a>
-              <a href="#">Přihlásit se</a>
-              <a href="#">Registrovat</a>
-            </div>
-          </div>
-        </div>
-      </header>
-    <div class="background-image"></div>
     <div id="header-placeholder"></div>
+    <div class="index-background-image"></div>
 
     <main>
-
-        <section class="hero">
-            <h1>Vítejte u Vilémova strejdy</h1>
-            <p>Zažijte nezapomenutelný pobyt v srdci přírody.</p>
-            <a href="#about" class="btn-primary">Zjistit více</a>
-        </section>
-
-    
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2>O nás</h2>
-                <p>Vilémův strejda je místo, kde se příroda setkává s pohodlím. Nabízíme ubytování, skvělé jídlo a aktivity pro celou rodinu.</p>
-            </div>
-            <div class="about-image">
-                <img src="about_image.jpg" alt="O nás">
-            </div>
-        </section>
-
-     
-        <section class="gallery">
-            <h2>Galerie</h2>
-            <div class="gallery-grid">
-                <img src="gallery1.jpg" alt="Galerie 1">
-                <img src="gallery2.jpg" alt="Galerie 2">
-                <img src="gallery3.jpg" alt="Galerie 3">
-                <img src="gallery4.jpg" alt="Galerie 4">
-            </div>
-        </section>
-
-     
-        <section class="contact">
-            <h2>Kontakt</h2>
-            <p>Máte otázky? Kontaktujte nás na <a href="mailto:info@mvilémuv strejda.cz">info@vilémuvstrejda.cz</a> nebo volejte na <a href="tel:+420123456789">+420 123 456 789</a>.</p>
-        </section>
+      <section class="hero">
+        <h1>Vítejte u Vilémova strejdy</h1>
+        <p>Zažijte nezapomenutelný pobyt v srdci přírody.</p>
+        <a href="#about" class="btn-primary">Zjistit více</a>
+      </section>
+      <section id="about" class="about">
+        <div class="about-content">
+          <h2>O nás</h2>
+          <p>Vilémův strejda je místo, kde se příroda setkává s pohodlím. Nabízíme ubytování, skvělé jídlo a aktivity pro celou rodinu.</p>
+        </div>
+        <div class="about-image">
+          <img src="about_image.jpg" alt="O nás">
+        </div>
+      </section>
+      <section class="gallery">
+        <h2>Galerie</h2>
+          <div class="gallery-grid">
+            <img src="gallery1.jpg" alt="Galerie 1">
+            <img src="gallery2.jpg" alt="Galerie 2">
+            <img src="gallery3.jpg" alt="Galerie 3">
+            <img src="gallery4.jpg" alt="Galerie 4">
+          </div>
+      </section>
+      <section class="contact">
+        <h2>Kontakt</h2>
+        <p>Máte otázky? Kontaktujte nás na <a href="mailto:info@mvilémuv strejda.cz">info@vilémuvstrejda.cz</a> nebo volejte na <a href="tel:+420123456789">+420 123 456 789</a>.</p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 vilemuv strejda. Všechna práva vyhrazena.</p>
+      <p>&copy; 2023 vilemuv strejda. Všechna práva vyhrazena.</p>
     </footer>
 </body>
 </html>
