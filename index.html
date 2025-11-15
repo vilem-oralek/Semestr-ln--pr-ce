@@ -9,18 +9,19 @@
       fetch("header.html")
         .then(response => response.text())
         .then(data => {
-          document.getElementById("header-placeholder").innerHTML = data;
+          document.getElementById("index-header-placeholder").innerHTML = data;
         });
     </script>
 </head>
 <body>
-  <div id="header-placeholder"></div>
-  <div class="index-background-image"></div>
-  <section class="hero">
-    <h1>Vítejte u Vilémova strejdy</h1>
-    <p>Zažijte nezapomenutelný pobyt v srdci přírody.</p>
-    <a href="#about" class="btn-primary">Zjistit více</a>
-  </section>
+  <div class="index-background-image">
+    <div id="index-header-placeholder"></div>
+    <section class="hero">
+      <h1>Vítejte u Vilémova strejdy</h1>
+      <p>Zažijte nezapomenutelný pobyt v srdci přírody.</p>
+      <a href="#about" class="btn-primary">Zjistit více</a>
+    </section>
+  </div>
   <div class="index-content">
   <section id="about" class="about">
     <div class="about-content">

@@ -32,7 +32,15 @@ html, body{
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-    z-index: 10;
+    z-index: 1001;
+  }
+  #index-header-placeholder{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: auto; 
   }
   #header-placeholder{
     width: 100%;
@@ -190,18 +198,15 @@ html, body{
 /* ********************************** Index CSS ************************************************ */
 /* ********************************************************************************************* */
 .index-background-image {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  min-height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-    url('background-image.jpg') no-repeat center center fixed;
+    url('background-image.jpg') no-repeat center center;
     background-size: cover;
 }
-
 .background-image {
   position: fixed;
   top: 0;
@@ -224,7 +229,7 @@ html, body{
 }
 
 .hero {
-  top: 50%;
+  top: calc(50% - 108px);
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -388,7 +393,6 @@ html, body{
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 80vh;
 }
 /* ********************************************************************************************* */
 /* ********************************** KONTAKTY ********************* */
