@@ -331,13 +331,13 @@ html, body{
   position: relative;
   top: 0;
   left: 0;
+  margin: 0;
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 0px;
   border: none;
-  margin: 0;
   box-shadow: none;
   z-index: 10;
-  padding: 20px 50px;
+  padding: 32px 43px;
 }
 #index-nav a{
   color: white;
@@ -459,6 +459,25 @@ html, body{
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+#kontakty-footer {
+  width: 100%;
+  height: 2vh;
+  background-color: rgba(211, 211, 211, 0.809);
+  color: black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  border-top: 4px solid #cdd9e5;
+  position: fixed;;
+  bottom: 0;
+  padding: 0.4vh;
+}
+
+>>>>>>> 2367ff78fea91fbedf628587718f5b083adf106e
 /* RESPONSIVITA */
 @media (max-width: 900px) {
   #kontakty-content {
