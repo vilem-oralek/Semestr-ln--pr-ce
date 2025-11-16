@@ -3,16 +3,27 @@ include 'conn.php';
 
 // Je použita metoda POST?
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $name = $_POST['jmeno'];
+  $first_name = $_POST['first-name'];
+  $last_name = $_POST['last-name'];
+  $phone = $_POST['phone'];
   $email = $_POST['email'];
-  $telefon = $_POST['telefon'];
+  $confirm_email = $_POST['confirm-email'];
   $password = $_POST['password'];
+  $birthdate = $_POST['birthdate'];
+
+  if ($email !== $confirm_email) {
+    echo '<script>
+            alert("E-maily se neshodují. Zkontrolujte prosím zadané údaje.");
+            window.history.back(); // Vrátí uživatele zpět na registrační formulář
+          </script>';
+    exit; // Zastaví další zpracování
+  }
 
   // Zahashování hesla do proměné 
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
   // SQL command který vkládá uživatele do databáze
-  $sql = "INSERT INTO Uzivatel (jmeno, email, tel_cislo, heslo) VALUES ('$name', '$email', '$telefon', '$hashed_password')";
+  $sql = "INSERT INTO users (jmeno, prijmeni, telefon, email, heslo, datum_narozeni) VALUES ('$first_name','$last_name', '$phone','$email', '$hashed_password', '$birthdate')";
 
   // Provedení SQL commandu
   if ($conn->query($sql) === TRUE) {
