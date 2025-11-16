@@ -948,3 +948,141 @@ button[type="submit"]:hover {
     opacity: 1;
   }
 }
+/* ********************************************************************************************* */
+/* ********************************** Profil Page ********************************************** */
+/* ********************************************************************************************* */
+
+/* Hero sekce pro profil */
+.profile-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 90vh;
+  padding: 20px;
+  position: relative;
+}
+
+.profile-title {
+  font-size: 3.5rem; /* Velký nadpis */
+  margin-bottom: 30px;
+  color: black;
+  text-align: center;
+}
+
+/* Kontejner pro profil */
+#profile-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sekce osobních údajů */
+.profile-details {
+  margin-bottom: 30px;
+}
+
+.profile-details h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.profile-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-details li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Sekce pro nahrání profilové fotky */
+.profile-photo-upload {
+  margin-bottom: 30px;
+}
+
+.profile-photo-upload h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#photo-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#photo-upload-form input[type="file"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#photo-upload-form button {
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #004b87;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#photo-upload-form button:hover {
+  background-color: #00325e;
+}
+
+/* Sekce výpisu rezervací */
+.profile-reservations {
+  margin-bottom: 30px;
+}
+
+.profile-reservations h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.profile-reservations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-reservations li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+  #profile-container {
+    padding: 20px;
+  }
+
+  .profile-title {
+    font-size: 2.5rem;
+  }
+
+  .profile-details li,
+  .profile-reservations li {
+    font-size: 1rem;
+  }
+
+  #photo-upload-form input[type="file"],
+  #photo-upload-form button {
+    font-size: 0.9rem;
+  }
+}
