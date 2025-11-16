@@ -1,3 +1,25 @@
+<?php
+  session_start();
+  include 'conn.php';
+
+  // Kontrola přihlášení
+  if (!isset($_SESSION['user_id'])) {
+      echo "Uživatel není přihlášen.";
+      exit;
+  }
+
+  $user_id = $_SESSION['user_id'];
+
+  $stmt = $conn->prepare("SELECT jmeno, prijmeni FROM users WHERE id = ?");
+  $stmt->bind_param("i", $user_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $user = $result->fetch_assoc();
+
+  if (!$user) {
+    echo "Uživatel nenalezen.";
+  }
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -17,15 +39,15 @@
   <div id="header-placeholder"></div>
   <section class="profile-hero">
     <div class="background-image"></div>
-    <main id="profile-container">
+    <main id="profile-container"> 
       <h1 class="profile-title">Můj Profil</h1>
       
       <!-- Sekce osobních údajů -->
       <section class="profile-details">
         <h2>Osobní údaje</h2>
         <ul>
-          <li>Jméno: <span id="user-first-name">Jan</span></li>
-          <li>Příjmení: <span id="user-last-name">Novák</span></li>
+          <li>Jméno: <span id="user-first-name"><?php echo htmlspecialchars($user['jmeno']) ?></span></li>
+          <li>Příjmení: <span id="user-last-name"><?php echo htmlspecialchars($user['prijmeni']); ?></span></li>
           <li>E-mail: <span id="user-email">jan.novak@example.com</span></li>
           <li>Telefon: <span id="user-phone">+420 123 456 789</span></li>
         </ul>
