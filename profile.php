@@ -4,7 +4,6 @@ include 'conn.php';
 
 // Kontrola přihlášení - MUSÍ BÝT HNED NA ZAČÁTKU
 if (!isset($_SESSION['user_id'])) {
-    // Použijeme PHP header pro čisté přesměrování
     header("Location: login.html"); 
     exit;
 }
@@ -12,8 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $user = null; // Inicializace proměnné
 
-// Získání dat uživatele
-$stmt = $conn->prepare("SELECT jmeno, prijmeni, telefon, email, datum_narozeni FROM users WHERE id = ?");
+// Získání dat uživatele (PŘIDÁNÍ profilovka_cesta do SELECTU)
+$stmt = $conn->prepare("SELECT jmeno, prijmeni, telefon, email, datum_narozeni, profilovka_cesta FROM users WHERE id = ?"); // Upravený řádek
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -29,8 +28,9 @@ if (!$user) {
     exit;
 }
 
-// Místo vypisování alertu, který blokuje, přesměrujeme čistě
-// Odstranili jsme: alert("Pro zobrazení profilu se musíte přihlásit.");
+// Zde se definuje, jaký obrázek se má zobrazit
+$profile_image_path = htmlspecialchars($user['profilovka_cesta'] ?? 'profile-picture-default.jpg');
+
 
 ?>
 <!DOCTYPE html>
@@ -64,11 +64,12 @@ if (!$user) {
           <li>Telefon: <span id="user-phone"><?php echo htmlspecialchars($user['telefon'] ?? 'N/A'); ?></span></li>
           <li>Datum narození: <span id="user-birthdate"><?php echo htmlspecialchars($user['datum_narozeni'] ?? 'N/A'); ?></span></li>
         </ul>
+        <img src="<?php echo $profile_image_path; ?>" alt="Profilová fotka" class="profile-page-photo">
       </section>
 
       <section class="profile-photo-upload">
         <h2>Nahrát profilovou fotku</h2>
-        <form id="photo-upload-form" method="post" enctype="multipart/form-data">
+        <form id="photo-upload-form" method="post" action="upload_profile_photo.php" enctype="multipart/form-data">
           <input type="file" id="profile-photo" name="profile-photo" accept="image/*" required>
           <button type="submit">Nahrát</button>
         </form>
