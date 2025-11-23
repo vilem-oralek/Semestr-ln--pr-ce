@@ -2,17 +2,17 @@
 session_start();
 include 'conn.php';
 
-// Kontrola přihlášení - MUSÍ BÝT HNED NA ZAČÁTKU
+// Kontrola přihlášení 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html"); 
     exit;
 }
 
 $user_id = $_SESSION['user_id'];
-$user = null; // Inicializace proměnné
+$user = null; 
 
-// Získání dat uživatele (PŘIDÁNÍ profilovka_cesta do SELECTU)
-$stmt = $conn->prepare("SELECT jmeno, prijmeni, telefon, email, datum_narozeni, profilovka_cesta FROM users WHERE id = ?"); // Upravený řádek
+// Získání dat uživatele 
+$stmt = $conn->prepare("SELECT jmeno, prijmeni, telefon, email, datum_narozeni, profilovka_cesta FROM users WHERE id = ?"); 
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -30,8 +30,6 @@ if (!$user) {
 
 // Zde se definuje, jaký obrázek se má zobrazit
 $profile_image_path = htmlspecialchars($user['profilovka_cesta'] ?? 'profile-picture-default.jpg');
-
-
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -57,13 +55,51 @@ $profile_image_path = htmlspecialchars($user['profilovka_cesta'] ?? 'profile-pic
       
       <section class="profile-details">
         <h2>Osobní údaje</h2>
-        <ul>
-          <li>Jméno: <span id="user-first-name"><?php echo htmlspecialchars($user['jmeno'] ?? 'N/A'); ?></span></li>
-          <li>Příjmení: <span id="user-last-name"><?php echo htmlspecialchars($user['prijmeni'] ?? 'N/A'); ?></span></li>
-          <li>E-mail: <span id="user-email"><?php echo htmlspecialchars($user['email'] ?? 'N/A'); ?></span></li>
-          <li>Telefon: <span id="user-phone"><?php echo htmlspecialchars($user['telefon'] ?? 'N/A'); ?></span></li>
-          <li>Datum narození: <span id="user-birthdate"><?php echo htmlspecialchars($user['datum_narozeni'] ?? 'N/A'); ?></span></li>
-        </ul>
+        
+        <div id="display-view">
+          <ul>
+            <li>Jméno: <span id="user-first-name"><?php echo htmlspecialchars($user['jmeno'] ?? 'N/A'); ?></span></li>
+            <li>Příjmení: <span id="user-last-name"><?php echo htmlspecialchars($user['prijmeni'] ?? 'N/A'); ?></span></li>
+            <li>E-mail: <span id="user-email"><?php echo htmlspecialchars($user['email'] ?? 'N/A'); ?></span></li>
+            <li>Telefon: <span id="user-phone"><?php echo htmlspecialchars($user['telefon'] ?? 'N/A'); ?></span></li>
+            <li>Datum narození: <span id="user-birthdate"><?php echo htmlspecialchars($user['datum_narozeni'] ?? 'N/A'); ?></span></li>
+          </ul>
+          <button type="button" class="edit-profile-button" onclick="toggleEditMode()">Upravit údaje</button>
+        </div>
+
+        <div id="edit-view" style="display:none;">
+          <form id="profile-edit-form" method="post" action="update_profile.php">
+            
+            <div class="form-group-edit">
+              <label for="jmeno">Jméno:</label>
+              <input type="text" id="jmeno" name="jmeno" value="<?php echo htmlspecialchars($user['jmeno'] ?? ''); ?>" required>
+            </div>
+            
+            <div class="form-group-edit">
+              <label for="prijmeni">Příjmení:</label>
+              <input type="text" id="prijmeni" name="prijmeni" value="<?php echo htmlspecialchars($user['prijmeni'] ?? ''); ?>" required>
+            </div>
+            
+            <div class="form-group-edit">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email'] ?? ''); ?>" required>
+            </div>
+            
+            <div class="form-group-edit">
+              <label for="telefon">Telefon:</label>
+              <input type="tel" id="telefon" name="telefon" value="<?php echo htmlspecialchars($user['telefon'] ?? ''); ?>" pattern="[0-9]{9}" title="Zadejte 9-místné číslo (např. 123456789)" required>
+            </div>
+            
+            <div class="form-group-edit">
+              <label for="datum_narozeni">Datum narození:</label>
+              <input type="date" id="datum_narozeni" name="datum_narozeni" value="<?php echo htmlspecialchars($user['datum_narozeni'] ?? ''); ?>" required>
+            </div>
+            
+            <button type="submit" class="save-profile-button">Uložit změny</button>
+            <button type="button" class="cancel-profile-button" onclick="toggleEditMode()">Zrušit</button>
+          </form>
+        </div>
+
         <img src="<?php echo $profile_image_path; ?>" alt="Profilová fotka" class="profile-page-photo">
       </section>
 
@@ -86,5 +122,22 @@ $profile_image_path = htmlspecialchars($user['profilovka_cesta'] ?? 'profile-pic
     <footer>
         <p>&copy; 2023 Vilémův strejda. Všechna práva vyhrazena.</p>
     </footer>
+
+    <script>
+      function toggleEditMode() {
+        const displayView = document.getElementById('display-view');
+        const editView = document.getElementById('edit-view');
+
+        if (displayView.style.display !== 'none') {
+          // Přepnout na formulář
+          displayView.style.display = 'none';
+          editView.style.display = 'block';
+        } else {
+          // Přepnout zpět na seznam
+          editView.style.display = 'none';
+          displayView.style.display = 'block';
+        }
+      }
+    </script>
 </body>
 </html>
