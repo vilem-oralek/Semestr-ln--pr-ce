@@ -4,20 +4,27 @@ session_start();
 $is_logged_in = isset($_SESSION['user_id']);
 
 $profile_image_path = 'profile-picture-default.jpg'; // Defaultní placeholder
+$display_name = 'Profil'; // Defaultní text, když nikdo není přihlášen
 
 if ($is_logged_in) {
     include 'conn.php'; // Připojení k DB jen pokud je uživatel přihlášen
     $user_id = $_SESSION['user_id'];
     
-    // Načtení cesty k profilovce
-    $stmt = $conn->prepare("SELECT profilovka_cesta FROM users WHERE id = ?");
+    // ZMĚNA ZDE: Přidali jsme 'jmeno' do SELECTu
+    $stmt = $conn->prepare("SELECT jmeno, profilovka_cesta FROM users WHERE id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $user_data = $result->fetch_assoc();
     
-    if ($user_data && !empty($user_data['profilovka_cesta'])) {
-        $profile_image_path = htmlspecialchars($user_data['profilovka_cesta']);
+    if ($user_data) {
+        if (!empty($user_data['profilovka_cesta'])) {
+            $profile_image_path = htmlspecialchars($user_data['profilovka_cesta']);
+        }
+  
+        if (!empty($user_data['jmeno'])) {
+            $display_name = htmlspecialchars($user_data['jmeno']);
+        }
     }
 }
 ?>
@@ -47,7 +54,7 @@ if ($is_logged_in) {
     
         <div class="user-controls">
           <div class="user-dropdown">
-            <div class="username">Profil</div>
+            <div class="username"><?php echo $display_name; ?></div>
             <div class="dropdown-content">
               <?php if ($is_logged_in): ?>
                 <a href="profile.php">Profil</a>
