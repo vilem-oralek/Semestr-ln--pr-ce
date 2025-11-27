@@ -1,16 +1,16 @@
 <?php
 session_start();
-// Zkontroluje, zda je uživatel přihlášen na základě existence 'user_id' v session
 $is_logged_in = isset($_SESSION['user_id']);
+// Zjistíme, jestli je admin
+$is_admin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
-$profile_image_path = 'profile-picture-default.jpg'; // Defaultní placeholder
-$display_name = 'Profil'; // Defaultní text, když nikdo není přihlášen
+$profile_image_path = 'profile-picture-default.jpg'; 
+$display_name = 'Profil'; 
 
 if ($is_logged_in) {
-    include 'conn.php'; // Připojení k DB jen pokud je uživatel přihlášen
+    include 'conn.php'; 
     $user_id = $_SESSION['user_id'];
     
-    // ZMĚNA ZDE: Přidali jsme 'jmeno' do SELECTu
     $stmt = $conn->prepare("SELECT jmeno, profilovka_cesta FROM users WHERE id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
@@ -21,7 +21,6 @@ if ($is_logged_in) {
         if (!empty($user_data['profilovka_cesta'])) {
             $profile_image_path = htmlspecialchars($user_data['profilovka_cesta']);
         }
-  
         if (!empty($user_data['jmeno'])) {
             $display_name = htmlspecialchars($user_data['jmeno']);
         }
@@ -33,7 +32,7 @@ if ($is_logged_in) {
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>Chata</title>
     <link rel="stylesheet" href="style.css">
     </head>
     <body id = "headerBody">
@@ -48,6 +47,11 @@ if ($is_logged_in) {
           <ul>
             <li><a href="galerie.html">Galerie</a></li>
             <li><a href="rezervace.html">Rezervace</a></li>
+            
+            <?php if ($is_admin): ?>
+                <li><a href="admin.php" style="color: #ffcccc; font-weight: bold;">Admin Panel</a></li>
+            <?php endif; ?>
+            
             <li><a href="kontakty.html">Kontakt</a></li>
           </ul>
         </nav>
@@ -58,6 +62,9 @@ if ($is_logged_in) {
             <div class="dropdown-content">
               <?php if ($is_logged_in): ?>
                 <a href="profile.php">Profil</a>
+                <?php if ($is_admin): ?>
+                    <a href="admin.php">Admin Panel</a>
+                <?php endif; ?>
                 <a href="logout.php">Odhlásit se</a>
               <?php else: ?>
                 <a href="login.html">Přihlásit se</a> <a href="registration.html">Registrovat</a> <?php endif; ?>
